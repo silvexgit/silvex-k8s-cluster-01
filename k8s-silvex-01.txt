@@ -1,0 +1,106 @@
+[root@mail k8s]# vi /usr/local/bin/create_k8s.sh
+[root@mail k8s]# vi /usr/local/bin/create_k8s.sh
+[root@mail k8s]# bash /usr/local/bin/create_k8s.sh
+2023-10-14 17:49:11 [ℹ]  eksctl version 0.162.0
+2023-10-14 17:49:11 [ℹ]  using region us-west-2
+2023-10-14 17:49:11 [ℹ]  skipping us-west-2d from selection because it doesn't support the following instance type(s): t2.micro
+2023-10-14 17:49:11 [ℹ]  setting availability zones to [us-west-2c us-west-2b us-west-2a]
+2023-10-14 17:49:11 [ℹ]  subnets for us-west-2c - public:192.168.0.0/19 private:192.168.96.0/19
+2023-10-14 17:49:11 [ℹ]  subnets for us-west-2b - public:192.168.32.0/19 private:192.168.128.0/19
+2023-10-14 17:49:11 [ℹ]  subnets for us-west-2a - public:192.168.64.0/19 private:192.168.160.0/19
+2023-10-14 17:49:11 [ℹ]  nodegroup "ng-154471de" will use "" [AmazonLinux2/1.27]
+2023-10-14 17:49:11 [ℹ]  using Kubernetes version 1.27
+2023-10-14 17:49:11 [ℹ]  creating EKS cluster "silvex-k8s-01-cluster" in "us-west-2" region with managed nodes
+2023-10-14 17:49:11 [ℹ]  will create 2 separate CloudFormation stacks for cluster itself and the initial managed nodegroup
+2023-10-14 17:49:11 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=us-west-2 --cluster=silvex-k8s-01-cluster'
+2023-10-14 17:49:11 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "silvex-k8s-01-cluster" in "us-west-2"
+2023-10-14 17:49:11 [ℹ]  CloudWatch logging will not be enabled for cluster "silvex-k8s-01-cluster" in "us-west-2"
+2023-10-14 17:49:11 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=us-west-2 --cluster=silvex-k8s-01-cluster'
+2023-10-14 17:49:11 [ℹ]
+2 sequential tasks: { create cluster control plane "silvex-k8s-01-cluster",
+    2 sequential sub-tasks: {
+        wait for control plane to become ready,
+        create managed nodegroup "ng-154471de",
+    }
+}
+2023-10-14 17:49:11 [ℹ]  building cluster stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 17:49:11 [ℹ]  deploying stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 17:49:41 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 17:50:11 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 17:51:12 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 17:52:12 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 17:53:12 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 17:54:12 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 17:55:12 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 17:56:12 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 17:57:13 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 17:59:14 [ℹ]  building managed nodegroup stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 17:59:15 [ℹ]  deploying stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 17:59:15 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 17:59:45 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:00:23 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:02:05 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:02:05 [ℹ]  waiting for the control plane to become ready
+2023-10-14 18:02:06 [✔]  saved kubeconfig as "/root/.kube/config"
+2023-10-14 18:02:06 [ℹ]  no tasks
+2023-10-14 18:02:06 [✔]  all EKS cluster resources for "silvex-k8s-01-cluster" have been created
+2023-10-14 18:02:06 [ℹ]  nodegroup "ng-154471de" has 3 node(s)
+2023-10-14 18:02:06 [ℹ]  node "ip-192-168-47-8.us-west-2.compute.internal" is ready
+2023-10-14 18:02:06 [ℹ]  node "ip-192-168-7-110.us-west-2.compute.internal" is ready
+2023-10-14 18:02:06 [ℹ]  node "ip-192-168-88-229.us-west-2.compute.internal" is ready
+2023-10-14 18:02:06 [ℹ]  waiting for at least 3 node(s) to become ready in "ng-154471de"
+2023-10-14 18:02:06 [ℹ]  nodegroup "ng-154471de" has 3 node(s)
+2023-10-14 18:02:06 [ℹ]  node "ip-192-168-47-8.us-west-2.compute.internal" is ready
+2023-10-14 18:02:06 [ℹ]  node "ip-192-168-7-110.us-west-2.compute.internal" is ready
+2023-10-14 18:02:06 [ℹ]  node "ip-192-168-88-229.us-west-2.compute.internal" is ready
+2023-10-14 18:02:06 [✖]  getting kubectl version: error running `kubectl version`: exit status 1
+2023-10-14 18:02:06 [ℹ]  cluster should be functional despite missing (or misconfigured) client binaries
+2023-10-14 18:02:06 [✔]  EKS cluster "silvex-k8s-01-cluster" in "us-west-2" region is ready
+[root@mail k8s]# eksctl get cluster
+NAME                    REGION          EKSCTL CREATED
+silvex-k8s-01-cluster   us-west-2       True
+[root@mail k8s]# aws eks list-clusters
+{
+    "clusters": [
+        "silvex-k8s-01-cluster"
+    ]
+}
+[root@mail k8s]# date
+Sat Oct 14 18:30:46 PDT 2023
+[root@mail k8s]# eksctl delete cluster --name=silvex-k8s-01-cluster
+2023-10-14 18:35:02 [ℹ]  deleting EKS cluster "silvex-k8s-01-cluster"
+2023-10-14 18:35:02 [ℹ]  will drain 0 unmanaged nodegroup(s) in cluster "silvex-k8s-01-cluster"
+2023-10-14 18:35:02 [ℹ]  starting parallel draining, max in-flight of 1
+2023-10-14 18:35:03 [ℹ]  deleted 0 Fargate profile(s)
+2023-10-14 18:35:03 [✔]  kubeconfig has been updated
+2023-10-14 18:35:03 [ℹ]  cleaning up AWS load balancers created by Kubernetes objects of Kind Service or Ingress
+2023-10-14 18:35:04 [ℹ]
+2 sequential tasks: { delete nodegroup "ng-154471de", delete cluster control plane "silvex-k8s-01-cluster" [async]
+}
+2023-10-14 18:35:04 [ℹ]  will delete stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:35:04 [ℹ]  waiting for stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de" to get deleted
+2023-10-14 18:35:04 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:35:35 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:36:24 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+^C
+[root@mail k8s]# eksctl delete cluster --name=silvex-k8s-01-cluster
+2023-10-14 18:37:06 [ℹ]  deleting EKS cluster "silvex-k8s-01-cluster"
+2023-10-14 18:37:07 [ℹ]  will drain 0 unmanaged nodegroup(s) in cluster "silvex-k8s-01-cluster"
+2023-10-14 18:37:07 [ℹ]  starting parallel draining, max in-flight of 1
+2023-10-14 18:37:07 [ℹ]  deleted 0 Fargate profile(s)
+2023-10-14 18:37:08 [✔]  kubeconfig has been updated
+2023-10-14 18:37:08 [ℹ]  cleaning up AWS load balancers created by Kubernetes objects of Kind Service or Ingress
+2023-10-14 18:37:09 [ℹ]
+2 sequential tasks: { delete nodegroup "ng-154471de", delete cluster control plane "silvex-k8s-01-cluster" [async]
+}
+2023-10-14 18:37:09 [ℹ]  will delete stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:37:09 [ℹ]  waiting for stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de" to get deleted
+2023-10-14 18:37:09 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:37:39 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:38:25 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:39:27 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:40:07 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:42:04 [ℹ]  waiting for CloudFormation stack "eksctl-silvex-k8s-01-cluster-nodegroup-ng-154471de"
+2023-10-14 18:42:04 [ℹ]  will delete stack "eksctl-silvex-k8s-01-cluster-cluster"
+2023-10-14 18:42:04 [✔]  all cluster resources were deleted
+
