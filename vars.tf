@@ -28,3 +28,6 @@ variable "SILVEX-EC2-TYPE" {
 variable "SILVEX-EKS-CLUSTER" {
   default = "silvex-eks-01"
 }
+variable "SILVEX-EKS-CLUSTER-VERSION" {
+  default = "1.31"
+}
